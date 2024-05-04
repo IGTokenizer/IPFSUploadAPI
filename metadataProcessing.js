@@ -8,13 +8,7 @@ function createMetadata(imageHash, igpostId) {
         const metadata = {
             name: 'IGTokenizer NFT',
             description: `NFT minted after successfully verifying the authority over post ${igpostId}.`,
-            image: `ipfs://${imageHash}`,
-            attributes: [
-                {
-                  "trait_type": "Verified", 
-                  "value": "true"
-                }
-              ]
+            image: `ipfs://${imageHash}`
         };
         const metadataPath = `./metadata/${igpostId}.json`;
         fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
