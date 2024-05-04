@@ -46,11 +46,10 @@ app.post('/process-metadata', async (req, res) => {
         });
     } catch (error) {
         console.error('Error processing image:', error);
-        res.status(500).send({ error: 'Failed to process image and upload to IPFS' });
+        res.status(500).send({ error: 'Failed to process metadata and upload to IPFS' });
     }
 });
 
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
