@@ -1,5 +1,6 @@
 const express = require('express');
-const { addTextAndOverlay, uploadToIPFS } = require('./imageProcessing'); // Assuming you moved the functions to imageProcessing.js
+const { addTextAndOverlay, uploadToIPFS } = require('./imageProcessing');
+const { createMetadata } = require('./metadataProcessing');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -36,11 +37,11 @@ app.post('/process-metadata', async (req, res) => {
             return res.status(400).send({ error: 'Missing required parameters: hash of the image or igpostId' });
         }
 
-        const imagePath = await createMetadata(imageHash, igpostId);
-        const ipfsResult = await uploadToIPFS(imagePath);
+        const metadataPath = createMetadata(imageHash, igpostId);
+        const ipfsResult = await uploadToIPFS(metadataPath);
         
         res.send({
-            message: 'Image processed and uploaded successfully',
+            message: 'Metadata processed and uploaded successfully',
             data: ipfsResult
         });
     } catch (error) {
