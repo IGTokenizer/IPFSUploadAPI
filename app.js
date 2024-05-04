@@ -3,7 +3,7 @@ const { addTextAndOverlay, uploadToIPFS } = require('./imageProcessing'); // Ass
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
