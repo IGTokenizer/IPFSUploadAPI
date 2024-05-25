@@ -1,11 +1,5 @@
 {
   "name": "IGTokenizer NFT",
   "description": "NFT minted after successfully verifying the authority over post C55-yFLN5HM.",
-  "image": "ipfs://QmNfgBuLbneUVWMUs2dtgzabeJpSQp7axRBdMbJfSgzJqd",
-  "attributes": [
-    {
-      "trait_type": "Verified",
-      "value": "true"
-    }
-  ]
+  "image": "ipfs://QmRgU52qCVEGQnveF3txCXvumMMWt7xkf21sJrLMRBka9s"
 }

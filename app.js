@@ -2,12 +2,13 @@ const express = require('express');
 const { addTextAndOverlay, uploadToIPFS } = require('./imageProcessing');
 const { createMetadata } = require('./metadataProcessing');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const app = express();
 const PORT = 3001;
 
 app.use(bodyParser.json());
 
+app.use(cors());
 // POST endpoint to create NFT image and upload to IPFS
 app.post('/process-image', async (req, res) => {
     try {
