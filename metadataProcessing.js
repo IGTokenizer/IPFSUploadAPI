@@ -7,7 +7,7 @@ function createMetadata(imageHash, igpostId) {
     try {
         const metadata = {
             name: 'IGTokenizer NFT',
-            description: `NFT minted after successfully verifying the authority over post ${igpostId}.`,
+            description: `NFT minted after successfully verifying the authority over post ${igpostId.replace("-", " ")}.`,
             image: `ipfs://${imageHash}`
         };
         const metadataPath = `./metadata/${igpostId}.json`;
